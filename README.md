@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gestelyo
 
 Landing page React en français, réalisée à partir de la référence visuelle fournie le 8 octobre 2026.
@@ -30,3 +31,6 @@ Les photographies d’illustration sont servies par images.unsplash.com (bureaux
 - `index.html` : métadonnées et point d’entrée.
 
 Aucun dépôt Git n’était initialisé dans le dossier existant au démarrage.
+=======
+# gestelyo
+>>>>>>> origin/main
