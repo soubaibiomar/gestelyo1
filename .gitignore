@@ -3,6 +3,7 @@ dist/
 .DS_Store
 *.local
 .prerender/
+.wrangler/
 .env
 .env.*
 !.env.example

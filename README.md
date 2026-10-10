@@ -26,13 +26,17 @@ Pour un aperçu non indexable, définir SITE_MODE=preview dans l’environnement
 
 Publier dist/ à la racine du domaine. Servir les index.html des sous dossiers. Les chemins inconnus doivent renvoyer 404.html avec un statut HTTP 404. Ne pas appliquer de réécriture SPA universelle. Rediriger HTTP et les hôtes secondaires vers https://gestelyo.com en conservant le chemin.
 
-Le dépôt ne déploie pas automatiquement le site. DNS, certificat HTTPS et rattachement du domaine se configurent chez l’hébergeur. GitHub Actions construit et vérifie le site à chaque envoi.
+L’hébergement confirmé est Cloudflare Workers, Worker gestelyo1. wrangler.jsonc publie dist avec une vraie page 404 et exécute scripts/site-worker.mjs pour rediriger HTTP et www vers https://gestelyo.com. Les chemins et paramètres sont conservés, les routes connues prennent une barre finale et les hôtes de prévisualisation reçoivent noindex. Le nom du Worker existant est conservé ; aucune route DNS n’est créée par ce fichier.
+
+Dans la configuration de construction du Worker, utiliser npm run build puis npx wrangler deploy. Une ancienne commande contenant des options de routage SPA doit être retirée pour laisser la configuration du dépôt faire autorité. Les paramètres de compte et DNS restent gérés dans Cloudflare. GitHub Actions vérifie le site, mais ne dispose pas de secret de déploiement Cloudflare. run_worker_first traite chaque requête dans le Worker ; surveiller les quotas de la formule existante.
+
+Après déploiement, npm run test:live contrôle les 31 pages, sitemap, robots, redirections et une URL inconnue. Un échec signifie que la version publique ou son routage ne correspond pas au contrat du dépôt. Le rapport est écrit dans outputs/live-search-verification.json. Ce contrôle ne mesure pas l’indexation Google.
 
 ## SEO et visibilité IA
 
 Les contenus sont lisibles sans JavaScript. Les tests couvrent les 31 routes, titres, descriptions, liens, H1, tarifs, données structurées et réponses produit. La politique robots existante est conservée. Après publication, vérifier le domaine dans Search Console et Bing Webmaster Tools, soumettre le sitemap et inspecter les pages prioritaires.
 
-Les vérifications locales ne prouvent pas une indexation, un classement, une citation IA ou les performances terrain.
+Les vérifications locales ne prouvent pas une indexation, un classement, une citation IA ou les performances terrain. Dans la propriété vérifiée gestelyo.com de Google Search Console, soumettre https://gestelyo.com/sitemap.xml puis inspecter l’accueil, /produit/, /tarifs/ et /modules/crm/. Contrôler le canonical sélectionné par Google et demander une indexation après la réussite des contrôles publics. Faire de même dans Bing Webmaster Tools. Aucun code de vérification de propriété n’est inventé ni ajouté sans celui fourni par la console.
 
 ## Contact
 

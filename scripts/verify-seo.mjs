@@ -42,6 +42,8 @@ const schema = JSON.parse(
   html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1],
 );
 assert.equal(schema["@context"], "https://schema.org");
+assert.equal(schema['@graph'].find(node => node['@type'] === 'WebSite').alternateName, 'Gestelyo ERP');
+assert.ok(html.includes('Gestelyo, le projet d’ERP pour les PME au Maroc'), 'Marque et périmètre visibles dans la présentation');
 assert.ok(
   !JSON.stringify(schema).match(/"(offers|aggregateRating|review|address)"/),
   "Pas de preuve commerciale inventée",

@@ -52,6 +52,7 @@ export function structuredData(origin, path = "/", meta = {}) {
   };
   const publisher = {
     '@type': 'Organization', name: 'Gestelyo',
+    description: 'Gestelyo développe un projet de logiciel ERP pour les PME au Maroc, avec le commerce et la distribution comme priorité de lancement.',
     email: ['omarsoubaibi@gestelyo.com', 'redachouikh@gestelyo.com'],
     ...(origin ? { '@id': `${origin}/#organization`, url: `${origin}/`, logo: `${origin}/gestelyo-logo.png` } : {}),
   };
@@ -72,6 +73,8 @@ export function structuredData(origin, path = "/", meta = {}) {
   if (origin) {
     app["@id"] = `${origin}/#software`;
     app.url = `${origin}/`;
+    app.publisher = { '@id': `${origin}/#organization` };
+    page.publisher = { '@id': `${origin}/#organization` };
     page["@id"] = `${origin}${path}#webpage`;
     page.url = `${origin}${path}`;
     page.isPartOf = { "@id": `${origin}/#website` };
@@ -82,6 +85,7 @@ export function structuredData(origin, path = "/", meta = {}) {
       {
         "@type": "WebSite",
         name: "Gestelyo",
+        alternateName: "Gestelyo ERP",
         inLanguage: "fr",
         publisher: origin ? { '@id': `${origin}/#organization` } : publisher,
         ...(origin ? { "@id": `${origin}/#website`, url: `${origin}/` } : {}),

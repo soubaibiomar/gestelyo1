@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gestelyo1",
+  "main": "scripts/site-worker.mjs",
+  "compatibility_date": "2026-10-10",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "force-trailing-slash",
+    "run_worker_first": true
+  }
+}

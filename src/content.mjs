@@ -88,6 +88,6 @@ for (const article of articles) {
   article.description = plainCopy(article.description);
 }
 export const routeMeta = {
-  "/": { title: "Gestelyo | Logiciel de gestion pour PME au Maroc", description: "Découvrez Gestelyo : clients, devis, factures, achats et stocks dans un même espace. Comparez les abonnements et explorez la démonstration." },
+  "/": { title: "Gestelyo | ERP et logiciel de gestion pour PME au Maroc", description: "Gestelyo, projet de logiciel ERP pour les PME au Maroc : CRM, devis, factures, achats et stocks. Découvrez la démo et les abonnements en dirhams." },
   ...pageContent,
 };
