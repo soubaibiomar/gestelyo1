@@ -210,3 +210,9 @@ White bordered plan panels share the same hierarchy. Business has a blue border 
 - **Don't** turn every panel into a ribbon composition or lifted surface.
 
 Not canonized: the automated original screenshot plate fidelity gate remains unresolved. This document records the implemented system, not a formal numerical match to the approved comp. Legacy glyph bullets and tiny uppercase labels that remain outside the main pricing list are carried defects, not primitives to copy to new surfaces.
+
+## Responsive correction, 10 October 2026
+
+The original logo asset remains unchanged. Its image now follows the container width with its natural proportions and vertical centering; obsolete fixed crops and mobile offsets are removed. Header controls fit a 320px viewport, mobile navigation has 44px touch targets and a vertically scrollable panel bounded by dynamic viewport height. Breadcrumbs and actions wrap, contact fields use 16px input text, and comparison tables scroll inside their own region.
+
+Verification: all 31 routes at 320, 390, 568, 768, 1024, 1280 and 1920px in Edge Chromium with reduced motion. No document width overflow, header/footer logo overflow or JavaScript page errors. Collapsed menus and submenus opened and closed at each applicable width, including 568px landscape with a 320px height. Pricing annual switch exercised. Physical devices, Safari and Firefox were not tested. Evidence is in outputs/responsive-verification.json and responsive-after captures.
