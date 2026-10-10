@@ -102,7 +102,7 @@ for (const [path, meta] of Object.entries(routeMeta)) {
   const data = JSON.parse(content.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
   assert.equal(data["@graph"][1].name, meta.title, `${path} : JSON-LD cohérent`);
   const organization = data['@graph'].find(node => node['@type'] === 'Organization');
-  assert.deepEqual(organization.email, ['contact@gestelyo.com', 'omarsoubaibi@gestelyo.com', 'redachouikh@gestelyo.com']);
+  assert.deepEqual(organization.email, ['contact@gestelyo.com']);
   if (meta.answer) {
     assert.ok(content.includes(meta.answer[0]) && content.includes(meta.answer[1]), `${path} : réponse visible sans JavaScript`);
     assert.equal(data['@graph'][1].abstract, meta.answer[1]);

@@ -14,7 +14,7 @@ export function Logo() {
 }
 
 export function ContactEmails() {
-  return <address className="contact-emails" aria-label="Adresses de contact Gestelyo">{['contact@gestelyo.com', 'omarsoubaibi@gestelyo.com', 'redachouikh@gestelyo.com'].map(email => <a key={email} href={`mailto:${email}`}>{email}</a>)}</address>;
+  return <address className="contact-emails" aria-label="Adresse de contact Gestelyo">{['contact@gestelyo.com'].map(email => <a key={email} href={`mailto:${email}`}>{email}</a>)}</address>;
 }
 
 export function SiteHeader({ path = "/" }) {

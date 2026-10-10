@@ -40,9 +40,7 @@ Les vérifications locales ne prouvent pas une indexation, un classement, une ci
 
 ## Contact
 
-omarsoubaibi@gestelyo.com
-
-redachouikh@gestelyo.com
+contact@gestelyo.com
 
 ## Périmètre
 
