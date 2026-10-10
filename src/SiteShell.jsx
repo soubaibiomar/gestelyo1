@@ -7,6 +7,7 @@ const navigation = [
   ['/secteurs/', 'Secteurs', [['/secteurs/', 'Les éditions métier'], ['/secteurs/commerce-distribution/', 'Commerce et distribution'], ['/secteurs/construction/', 'Construction'], ['/secteurs/retail-ecommerce/', 'Retail et e commerce'], ['/secteurs/services-agences/', 'Services et agences'], ['/secteurs/fabrication/', 'Fabrication']]],
   ['/tarifs/', 'Tarifs', []],
   ['/ressources/', 'Ressources', [['/ressources/', 'Guides pratiques'], ['/a-propos/', 'À propos'], ['/securite/', 'Sécurité et données'], ['/contact/', 'Préparer un échange']]],
+  ['/contact/', 'Contact', []],
 ];
 
 export function Logo() {
