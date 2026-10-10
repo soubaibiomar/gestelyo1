@@ -53,7 +53,7 @@ export function structuredData(origin, path = "/", meta = {}) {
   const publisher = {
     '@type': 'Organization', name: 'Gestelyo',
     description: 'Gestelyo développe un projet de logiciel ERP pour les PME au Maroc, avec le commerce et la distribution comme priorité de lancement.',
-    email: ['omarsoubaibi@gestelyo.com', 'redachouikh@gestelyo.com'],
+    email: ['contact@gestelyo.com', 'omarsoubaibi@gestelyo.com', 'redachouikh@gestelyo.com'],
     ...(origin ? { '@id': `${origin}/#organization`, url: `${origin}/`, logo: `${origin}/gestelyo-logo.png` } : {}),
   };
   const extras = [publisher];

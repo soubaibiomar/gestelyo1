@@ -328,3 +328,7 @@ p {text-wrap:pretty;}
 @media(pointer:coarse) {
  .gx-story-copy nav button,.gd-sidebar nav > button {min-height:44px;}
 }
+
+.gh-closing .contact-invitation {max-width:50ch;margin:22px 0 10px;color:#fff;font-size:16px;line-height:1.75;}
+.gh-closing .contact-direct {display:inline-flex;align-items:center;min-height:44px;font-size:clamp(20px,2.5vw,30px);font-weight:650;color:#fff;text-decoration:underline;text-underline-offset:6px;overflow-wrap:anywhere;max-width:100%;}
+.gh-closing > div {min-width:0;}
