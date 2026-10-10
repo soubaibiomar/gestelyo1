@@ -24,4 +24,20 @@ function routeMiddleware(server) {
   });
 }
 
-export default defineConfig({ plugins: [{ name: "gestelyo-static-routes", configureServer: routeMiddleware, configurePreviewServer: routeMiddleware }] });
+async function previewMiddleware(server) {
+  // Exercise the deployment policy locally, without restricting Vite's development client.
+  const policy = await readFile("dist/_headers", "utf8");
+  const headers = Object.fromEntries(policy.split(/\r?\n/).filter(line => /^  [A-Za-z-]+:/.test(line)).map(line => {
+    const colon = line.indexOf(":");
+    return [line.slice(0, colon).trim(), line.slice(colon + 1).trim()];
+  }));
+  server.middlewares.use((req, res, next) => {
+    for (const [name, value] of Object.entries(headers)) {
+      if (name !== "Strict-Transport-Security") res.setHeader(name, value);
+    }
+    next();
+  });
+  routeMiddleware(server);
+}
+
+export default defineConfig({ plugins: [{ name: "gestelyo-static-routes", configureServer: routeMiddleware, configurePreviewServer: previewMiddleware }] });
